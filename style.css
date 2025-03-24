@@ -1,0 +1,42 @@
+body {
+   background-color: gray;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   background: linear-gradient(-45deg, #0A0F1F, #162A40, #2C3E50, #3B5268, #4F6478);
+   background-size: 400% 400%;
+   animation: gradientAnimation 30s ease infinite;
+}
+
+@keyframes gradientAnimation {
+   0% {
+       background-position: 0% 50%;
+   }
+   50% {
+       background-position: 100% 50%;
+   }
+   100% {
+       background-position: 0% 50%;
+   }
+}
+
+h1 {
+   text-align: center;
+   margin: 40px 0;
+   color: white;
+}
+
+section {
+   background-color: white;
+   text-align: justify;
+   width: 57%;
+   margin: auto;
+   border: 1px solid #0A0F1F;
+   border-radius: 12px;
+   box-shadow: 0px 0px 10px #080b18;
+   padding: 35px;
+}
+
+footer {
+   margin: 30px 0;
+   color: white;
+   text-align: center;
+}
