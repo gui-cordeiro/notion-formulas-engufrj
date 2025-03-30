@@ -1,7 +1,49 @@
+:root {
+   --bg-color: #FFF;
+   --color: #191919;
+   --border-color-1: #2F3437;
+   --border-color-2: rgba(55, 53, 47, 0.16);
+   --apagar-border: rgba(55, 53, 47, 0.16);
+   --apagar-color: #3C4144;
+   
+   --apagar-hover-bgcolor: rgb(239, 239, 238);
+   --apagar-hover-color: ##3C4144;;
+   --apagar-hover-border: rgba(55, 53, 47, 0.16);
+
+   --apagar-active-bgcolor: rgb(223, 223, 222);
+   --apagar-active-color: #3C4144;
+   --apagar-active-border: rgba(55, 53, 47, 0.16);
+
+   --container-formulas-bgcolor: #FFF;
+   --container-formulas-border: rgba(55, 53, 47, 0.16);
+   --container-fb-border: rgba(255, 255, 255, 0.132);
+}
+
+.dark {
+   --bg-color: #191919;
+   --color: #FFF;
+   --border-color-1: #2F3437;
+   --border-color-2: #5a6265;
+   --apagar-border: #454b4e;
+   --apagar-color: rgba(255, 255, 255, 0.81);
+
+   --apagar-hover-bgcolor: rgba(255, 255, 255, 0.13);
+   --apagar-hover-color: rgba(255, 255, 255, 0.81);
+   --apagar-hover-border: rgba(255, 255, 255, 0.13);
+
+   --apagar-active-bgcolor: rgba(37,37,37);
+   --apagar-active-color: color: rgba(255, 255, 255, 0.81);
+   --apagar-active-border: rgba(255, 255, 255, 0.13);
+
+   --container-formulas-bgcolor: #2F3437;
+   --container-formulas-border: #2F3437;
+   --container-fb-border: rgba(255, 255, 255, 0.132);
+}
+
 body {
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   background-color: #FFF;
-   color: #191919;
+   background-color: var(--bg-color);
+   color: var(--color);
 }
 
 .container-notas {
@@ -26,18 +68,19 @@ input[type=number] {
 
 .container-notas input {
    width: 30px;
-   background-color: #FFF;
+   background-color: var(--bg-color);
    border: none;
-   border-bottom: 1px solid #2F3437;
-   color: #191919;
+   border-bottom: 1px solid var(--border-color-1);
+   color: var(--color);
    text-decoration: none;
    padding: 3px 12px;
    text-align: center;
+   transition: all 0.2s ease;
 }
 
 .container-notas input:focus {
    outline: none;
-   border-color: #5a6265;
+   border-color: var(--border-color-2);
    transition: all 0.2s ease;
 }
 
@@ -51,32 +94,34 @@ input[type=number] {
    cursor: pointer;
    margin: 0 10px;
    padding: 5px 10px;
-   border: 1px solid rgba(55, 53, 47, 0.16);
+   border: 1px solid var(--apagar-border);
    border-radius: 5px;
-   background-color: #FFF;
-   color: #3C4144;
+   background-color: var(--bg-color);
+   color: var(--apagar-color);
    transform: scale(120%);
 }
 
 .apagar:hover {
-   background-color: rgb(239, 239, 238);
-   color: #191919;
+   background-color: var(--apagar-hover-bgcolor);
+   color: var(--apagar-hover-color);
+   border-color: var(--apagar-hover-border);
 }
 
 .apagar:active {
-   background-color: rgba(223, 223, 222);
-   color: #191919;
+   background-color: var(--apagar-active-bgcolor);
+   color: var(--apagar-active-color);
+   border-color: var(--apagar-active-border);
 }
 
 #container-formulas {
-   background-color: #FFF;
-   border: 1px solid rgba(55, 53, 47, 0.16);
+   background-color: var(--container-formulas-bgcolor);
+   border: 1px solid var(--container-formulas-border);
    border-radius: 20px;
    height: fit-content;
    width: fit-content;
    margin: auto;
    text-align: center;
-   padding: 20px
+   padding: 20px;
 }
 
 #container-f{
@@ -87,52 +132,9 @@ input[type=number] {
 }
 
 #container-fb {
-   border-top: 1px solid rgba(255, 255, 255, 0.132);
+   border-top: 1px solid var(--container-fb-border);
    width: 400px;
    margin: 0 auto;
    text-align: center;
    font-size: 110%;
-}
-
-@media(prefers-color-scheme: dark) {
-   body {
-      background-color: #191919;
-      color: white;
-   }
-   .container-notas input {
-      background-color: #191919;
-      border-bottom: 1px solid #2F3437;
-      color: #FFF;
-   }
-   
-   .container-notas input:focus {
-      border-color: #5a6265;
-   }
-
-   .apagar{
-      border: 1px solid #454B4E;
-      background-color: #191919;
-      color: rgba(255, 255, 255, 0.81);
-   }
-   
-   .apagar:hover {
-      background-color: rgba(255, 255, 255, 0.13);
-      color: rgba(255, 255, 255, 0.81);
-      border-color: rgba(255, 255, 255, 0.13);
-   }
-   
-   .apagar:active {
-      background-color: rgba(37,37,37);
-      color: rgba(255, 255, 255, 0.81);
-      border-color: rgba(255, 255, 255, 0.13);
-   }
-   
-   #container-formulas {
-      background-color: #2F3437;
-      border: 1px solid #2F3437;
-   }
-   
-   #container-fb {
-      border-top: 1px solid rgba(255, 255, 255, 0.132);
-   }
 }

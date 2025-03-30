@@ -10,13 +10,21 @@ let formulaBonus3 = "P_3' = P_3 + \\frac{L_3}{10} = 0.00"
 let formulaBase1 = "GF_1 = \\frac{3.P_1' + 4.P_2' + 5P_3'}{12} = 0.00"
 let formulaBase2 = "GF_2 = \\frac{3.P_1' + 4.P_2' + 7P_3'}{14} = 0.00"
 
+let currentTheme = null
+
 document.addEventListener("DOMContentLoaded", apagar);
 
-document.getElementById("apagar").addEventListener("click", apagar)
-   
-for (let c = 0; c < 6; c ++) {
-   document.getElementsByClassName("caixa-texto")[c].addEventListener("input", calcular)
+
+function switchThemes() {
+   const isDarkMode = document.body.classList.contains('dark');
+   document.documentElement.classList.toggle('dark', isDarkMode);
 }
+
+const observer = new MutationObserver(switchThemes);
+observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+
+switchThemes();
+
 
 function renderizar(info, content) {
    katex.render(content, document.getElementById(info), {
