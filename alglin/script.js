@@ -70,9 +70,9 @@ function calcular() {
    let L2 = obterNota(document.getElementById("L2").value)
    let L3 = obterNota(document.getElementById("L3").value)
 
-   let P1B = P1 + L1/10
-   let P2B = P2 + L2/10
-   let P3B = P3 + L3/10
+   let P1B = (P1 + L1/10) > 10 ? 10 : (P1 + L1/10)
+   let P2B = (P2 + L2/10) > 10 ? 10 : (P2 + L2/10)
+   let P3B = (P3 + L3/10) > 10 ? 10 : (P3 + L3/10)
 
    let resultado1 = (3*P1B + 4*P2B + 5*P3B) / 12
    let resultado2 = (3*P1B + 4*P2B + 7*P3B) / 14
