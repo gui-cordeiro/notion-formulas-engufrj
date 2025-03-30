@@ -1,43 +1,37 @@
 :root {
-   --bg-color: #FFF;
-   --color: #191919;
-   --border-color-1: #2F3437;
-   --border-color-2: rgba(55, 53, 47, 0.16);
-   --apagar-border: rgba(55, 53, 47, 0.16);
-   --apagar-color: #3C4144;
-   
-   --apagar-hover-bgcolor: rgb(239, 239, 238);
-   --apagar-hover-color: ##3C4144;;
-   --apagar-hover-border: rgba(55, 53, 47, 0.16);
-
-   --apagar-active-bgcolor: rgb(223, 223, 222);
-   --apagar-active-color: #3C4144;
-   --apagar-active-border: rgba(55, 53, 47, 0.16);
-
-   --container-formulas-bgcolor: #FFF;
-   --container-formulas-border: rgba(55, 53, 47, 0.16);
-   --container-fb-border: rgba(255, 255, 255, 0.132);
+   --bg-color: #FFF !important;
+   --color: #191919 !important;
+   --border-color-1: #2F3437 !important;
+   --border-color-2: rgba(55, 53, 47, 0.16) !important;
+   --apagar-border: rgba(55, 53, 47, 0.16) !important;
+   --apagar-color: #3C4144 !important;
+   --apagar-hover-bgcolor: rgb(239, 239, 238) !important;
+   --apagar-hover-color: ##3C4144 !important;
+   --apagar-hover-border: rgba(55, 53, 47, 0.16) !important;
+   --apagar-active-bgcolor: rgb(223, 223, 222) !important;
+   --apagar-active-color: #3C4144 !important;
+   --apagar-active-border: rgba(55, 53, 47, 0.16) !important;
+   --container-formulas-bgcolor: #FFF !important;
+   --container-formulas-border: rgba(55, 53, 47, 0.16) !important;
+   --container-fb-border: rgba(255, 255, 255, 0.132) !important;
 }
 
 .dark {
-   --bg-color: #191919;
-   --color: #FFF;
-   --border-color-1: #2F3437;
-   --border-color-2: #5a6265;
-   --apagar-border: #454b4e;
-   --apagar-color: rgba(255, 255, 255, 0.81);
-
-   --apagar-hover-bgcolor: rgba(255, 255, 255, 0.13);
-   --apagar-hover-color: rgba(255, 255, 255, 0.81);
-   --apagar-hover-border: rgba(255, 255, 255, 0.13);
-
-   --apagar-active-bgcolor: rgba(37,37,37);
-   --apagar-active-color: color: rgba(255, 255, 255, 0.81);
-   --apagar-active-border: rgba(255, 255, 255, 0.13);
-
-   --container-formulas-bgcolor: #2F3437;
-   --container-formulas-border: #2F3437;
-   --container-fb-border: rgba(255, 255, 255, 0.132);
+   --bg-color: #191919 !important;
+   --color: #FFF !important;
+   --border-color-1: #2F3437 !important;
+   --border-color-2: #5a6265 !important;
+   --apagar-border: #454b4e !important;
+   --apagar-color: rgba(255, 255, 255, 0.81) !important;
+   --apagar-hover-bgcolor: rgba(255, 255, 255, 0.13) !important;
+   --apagar-hover-color: rgba(255, 255, 255, 0.81) !important;
+   --apagar-hover-border: rgba(255, 255, 255, 0.13) !important;
+   --apagar-active-bgcolor: rgba(37,37,37) !important;
+   --apagar-active-color: color: rgba(255, 255, 255, 0.81) !important;
+   --apagar-active-border: rgba(255, 255, 255, 0.13) !important;
+   --container-formulas-bgcolor: #2F3437 !important;
+   --container-formulas-border: #2F3437 !important;
+   --container-fb-border: rgba(255, 255, 255, 0.132) !important;
 }
 
 body {
