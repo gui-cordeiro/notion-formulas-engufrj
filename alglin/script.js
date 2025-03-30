@@ -18,12 +18,16 @@ document.addEventListener("DOMContentLoaded", apagar);
 function switchThemes() {
    const isDarkMode = document.body.classList.contains('dark');
    document.documentElement.classList.toggle('dark', isDarkMode);
+   console.log(`Tema detectado do Notion: Modo "${isDarkMode ? 'ESCURO' : 'CLARO'}"!`);
 }
 
-const observer = new MutationObserver(switchThemes);
-observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+window.addEventListener("load", () => {
+   switchThemes();
 
-switchThemes();
+   // Observa mudanças na classe do Notion
+   const observer = new MutationObserver(switchThemes);
+   observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+});
 
 
 function renderizar(info, content) {
