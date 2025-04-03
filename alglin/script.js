@@ -10,25 +10,48 @@ let formulaBonus3 = "P_3' = P_3 + \\frac{L_3}{10} = 0.00"
 let formulaBase1 = "GF_1 = \\frac{3.P_1' + 4.P_2' + 5P_3'}{12} = 0.00"
 let formulaBase2 = "GF_2 = \\frac{3.P_1' + 4.P_2' + 7P_3'}{14} = 0.00"
 
-let currentTheme = null
+const darkTheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-document.addEventListener("DOMContentLoaded", apagar);
+let currentTheme = darkTheme.matches ? true : false
+let lastTheme = currentTheme
 
-
-function switchThemes() {
-   const isDarkMode = document.body.classList.contains('dark');
-   document.documentElement.classList.toggle('dark', isDarkMode);
-   console.log(`Tema detectado do Notion: Modo "${isDarkMode ? 'ESCURO' : 'CLARO'}"!`);
-}
-
+// Delay para o transition ser adicionado
 window.addEventListener("load", () => {
-   switchThemes();
+   setTimeout(() => {
+      document.documentElement.classList.add("loaded")
+   }, 100)
+})
 
-   // Observa mudanças na classe do Notion
-   const observer = new MutationObserver(switchThemes);
-   observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+// Carrega 
+document.addEventListener("DOMContentLoaded", () => {
+   if (darkTheme.matches) {
+      lastTheme = !currentTheme
+      switchThemes()
+   }
+   apagar()
 });
+// Evento que altera o tema de acordo com o tema do navegador (ou do sistema operacional, caso use o app do Notion para Desktop)
+darkTheme.addEventListener("change", () => {
+   lastTheme = currentTheme
+   currentTheme = !currentTheme
+   switchThemes()
+})
 
+// Botão para trocar o tema
+document.getElementById("switchtheme").addEventListener("click", () => {
+   lastTheme = currentTheme
+   currentTheme = !currentTheme
+   switchThemes()
+})
+
+// Função que troca o tema da página
+function switchThemes() {
+   if (lastTheme != currentTheme) {
+      document.documentElement.classList.toggle('dark', currentTheme);
+      if (currentTheme) document.getElementById("switchtheme").innerText = "Modo Claro"
+      else document.getElementById("switchtheme").innerText = "Modo Escuro"
+   }
+}
 
 function renderizar(info, content) {
    katex.render(content, document.getElementById(info), {
