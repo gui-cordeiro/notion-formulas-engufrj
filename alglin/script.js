@@ -10,55 +10,6 @@ let formulaBonus3 = "P_3' = P_3 + \\frac{L_3}{10} = 0.00"
 let formulaBase1 = "GF_1 = \\frac{3.P_1' + 4.P_2' + 5P_3'}{12} = 0.00"
 let formulaBase2 = "GF_2 = \\frac{3.P_1' + 4.P_2' + 7P_3'}{14} = 0.00"
 
-const darkTheme = window.matchMedia("(prefers-color-scheme: dark)");
-
-let currentTheme = darkTheme.matches ? true : false
-let lastTheme = currentTheme
-
-// Delay para o transition ser adicionado
-window.addEventListener("load", () => {
-   setTimeout(() => {
-      document.documentElement.classList.add("loaded")
-   }, 100)
-})
-
-// Carrega 
-document.addEventListener("DOMContentLoaded", () => {
-   if (darkTheme.matches) {
-      lastTheme = !currentTheme
-      switchThemes()
-   }
-   apagar()
-});
-// Evento que altera o tema de acordo com o tema do navegador (ou do sistema operacional, caso use o app do Notion para Desktop)
-darkTheme.addEventListener("change", () => {
-   lastTheme = currentTheme
-   currentTheme = !currentTheme
-   switchThemes()
-})
-
-// Botão para trocar o tema
-document.getElementById("switchtheme").addEventListener("click", () => {
-   lastTheme = currentTheme
-   currentTheme = !currentTheme
-   switchThemes()
-})
-
-// Função que troca o tema da página
-function switchThemes() {
-   if (lastTheme != currentTheme) {
-      document.documentElement.classList.toggle('dark', currentTheme);
-      if (currentTheme) document.getElementById("switchtheme").innerText = "Modo Claro"
-      else document.getElementById("switchtheme").innerText = "Modo Escuro"
-   }
-}
-
-function renderizar(info, content) {
-   katex.render(content, document.getElementById(info), {
-      throwOnError: false
-   })
-}
-
 function arredondar(num) {
    return Math.ceil(num * 10) / 10
 }
